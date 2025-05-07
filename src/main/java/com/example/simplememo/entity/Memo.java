@@ -20,4 +20,8 @@ public class Memo {
         this.content = memo.getContent();
     }
 
+    public void updateTitle(String title){
+        this.title = title;
+    }
+
 }
