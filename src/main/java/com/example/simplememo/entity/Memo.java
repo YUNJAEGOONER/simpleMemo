@@ -6,22 +6,32 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-@Setter
+//@Setter
 @Getter
-@AllArgsConstructor
+@AllArgsConstructor //모든 필드(멤버 변수)를 가진 생성자
 public class Memo {
 
+    @Setter
     private Long id;
     private String title;
     private String content;
 
-    public void Update(MemoRequestDto memo){
-        this.title = memo.getTitle();
-        this.content = memo.getContent();
+    //constructor
+    public Memo(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
+
+    public void Update(String title, String content){
+        this.title = title;
+        this.content = content;
     }
 
     public void updateTitle(String title){
         this.title = title;
     }
+
+
 
 }
