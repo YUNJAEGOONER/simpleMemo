@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor //모든 필드(멤버 변수)를 가진 생성자
 public class Memo {
 
-    @Setter
+    //@Setter -> DB에서 알아서 ID를 만들어줌 (AutoIncrement)
     private Long id;
     private String title;
     private String content;

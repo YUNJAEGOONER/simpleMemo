@@ -2,8 +2,6 @@ package com.example.simplememo.controller;
 
 import com.example.simplememo.dto.MemoRequestDto;
 import com.example.simplememo.dto.MemoResponseDto;
-import com.example.simplememo.entity.Memo;
-import com.example.simplememo.repository.MemoRepositoryImpl;
 import com.example.simplememo.service.MemoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

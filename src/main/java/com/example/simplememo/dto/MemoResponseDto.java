@@ -1,10 +1,11 @@
 package com.example.simplememo.dto;
 
 import com.example.simplememo.entity.Memo;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-
+@AllArgsConstructor
 public class MemoResponseDto {
 
     //요구 사항에 따라 달라짐

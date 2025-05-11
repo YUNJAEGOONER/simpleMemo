@@ -5,10 +5,15 @@ import com.example.simplememo.entity.Memo;
 import lombok.extern.java.Log;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface MemoRepository {
-    public Memo save(Memo memo);
-    public List<MemoResponseDto> getMemos();
-    public Memo findMemoById(Long id);
-    public void deleteMemoById(Long id);
+    MemoResponseDto save(Memo memo);
+    List<MemoResponseDto> getMemos();
+    Optional<Memo> findMemoById(Long id);
+
+    int updateMemo(Long id, String title, String content);
+    int updateTitle(Long id, String title);
+
+    int deleteMemoById(Long id);
 }
