@@ -35,11 +35,14 @@ public class MemoServiceImpl implements MemoService {
 
     @Override
     public MemoResponseDto findMemoByID(Long id) {
-        Optional<Memo> memo = memoRepository.findMemoById(id);
-        if(memo.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Does not exist id = " + id);
-        }
-        return new MemoResponseDto(memo.get());
+//        Optional<Memo> memo = memoRepository.findMemoById(id);
+//        if(memo.isEmpty()) {
+//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Does not exist id = " + id);
+//        }
+//        return new MemoResponseDto(memo.get());
+
+        Memo memo = memoRepository.findMemoByIdOrElseThrow(id);
+        return new MemoResponseDto(memo);
     }
 
     @Transactional
@@ -57,7 +60,9 @@ public class MemoServiceImpl implements MemoService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Does not exist id = " + id);
         }
 
-        return new MemoResponseDto(memoRepository.findMemoById(id).get());
+        //Optional<Memo> optionalMemo = memoRepository.findMemoById(id);
+        Memo memo = memoRepository.findMemoByIdOrElseThrow(id);
+        return new MemoResponseDto(memo);
     }
 
     @Transactional
@@ -74,7 +79,9 @@ public class MemoServiceImpl implements MemoService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Does not exist id = " + id);
         }
 
-        return new MemoResponseDto(memoRepository.findMemoById(id).get());
+        //Optional<Memo> optionalMemo = memoRepository.findMemoById(id);
+        Memo memo = memoRepository.findMemoByIdOrElseThrow(id);
+        return new MemoResponseDto(memo);
     }
 
     @Override

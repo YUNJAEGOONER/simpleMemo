@@ -16,4 +16,6 @@ public interface MemoRepository {
     int updateTitle(Long id, String title);
 
     int deleteMemoById(Long id);
+
+    Memo findMemoByIdOrElseThrow(Long id);
 }
